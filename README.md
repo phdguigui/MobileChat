@@ -16,19 +16,6 @@ The project was developed as part of a university assignment for the subject "Mo
 
 ---
 
-## 📂 Project Structure
-
-```
-java-chat-app/
-├── server/
-│   └── ChatServer.java
-├── client/
-│   └── ChatClient.java
-└── README.md
-```
-
----
-
 ## 🧠 Topics Covered
 
 - 🔹 Java socket programming (ServerSocket and Socket)
