@@ -60,7 +60,6 @@ public class ChatServer {
             System.out.println("Arquivo encaminhado: " + sender + " -> " + receiver + " (" + filename + ", "
                     + fileData.length + " bytes)");
 
-            // Log do envio de arquivo
             logServer("Transferência de arquivo: " + sender + " -> " + receiver + " (" + filename + ", "
                     + fileData.length + " bytes)");
         } else {

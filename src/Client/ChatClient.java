@@ -17,7 +17,6 @@ public class ChatClient {
         String name = scanner.nextLine();
         out.writeUTF(name);
 
-        // Thread para receber mensagens
         new Thread(() -> {
             try {
                 while (true) {
@@ -27,7 +26,6 @@ public class ChatClient {
                         String msg = in.readUTF();
 
                         if (msg.startsWith("/message ")) {
-                            // Formato: /message remetente conteúdo
                             String[] parts = msg.split(" ", 3);
                             if (parts.length >= 3) {
                                 System.out.println(parts[1] + ": " + parts[2]);
@@ -51,7 +49,6 @@ public class ChatClient {
                         byte[] fileData = new byte[fileSize];
                         in.readFully(fileData);
 
-                        // Salva o arquivo no diretório atual
                         File receivedFile = new File(filename);
                         Files.write(receivedFile.toPath(), fileData);
                         System.out.println(sender + " enviou o arquivo: " + filename + " (" + fileSize + " bytes)");
@@ -63,13 +60,6 @@ public class ChatClient {
                 System.exit(0);
             }
         }).start();
-
-        // Envio de mensagens
-        System.out.println("Comandos disponíveis:");
-        System.out.println("/users - Listar usuários conectados");
-        System.out.println("/send message <destinatario> <mensagem> - Enviar mensagem para um usuário");
-        System.out.println("/send file <destinatario> <caminho do arquivo> - Enviar arquivo para um usuário");
-        System.out.println("/sair - Encerrar o programa");
 
         while (true) {
             String input = scanner.nextLine();
@@ -114,20 +104,10 @@ public class ChatClient {
 
             byte[] fileData = Files.readAllBytes(file.toPath());
             String filename = file.getName();
-
-            // Envia o tipo de mensagem
             out.writeUTF("/file");
-
-            // Envia o destinatário
             out.writeUTF(receiver);
-
-            // Envia o nome do arquivo
             out.writeUTF(filename);
-
-            // Envia o tamanho do arquivo
             out.writeInt(fileData.length);
-
-            // Envia os bytes do arquivo
             out.write(fileData);
             out.flush();
 

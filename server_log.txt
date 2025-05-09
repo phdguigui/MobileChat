@@ -42,3 +42,9 @@ Cliente conectado: 127.0.0.1 - 2025-05-06 23:48:24
 Cliente conectado: 127.0.0.1 - 2025-05-06 23:49:00
 2025-05-06 23:49:03 - Cliente registrado: lucas
 2025-05-07 00:00:25 - Transferência de arquivo: lucas -> jandi (teste_trab.txt, 5 bytes)
+2025-05-09 00:11:17 - Servidor iniciado
+Cliente conectado: 127.0.0.1 - 2025-05-09 00:11:23
+2025-05-09 00:11:26 - Cliente registrado: jandi
+Cliente conectado: 127.0.0.1 - 2025-05-09 00:11:31
+2025-05-09 00:11:33 - Cliente registrado: lucas
+2025-05-09 00:13:29 - Transferência de arquivo: lucas -> jandi (teste_trab.txt, 5 bytes)
