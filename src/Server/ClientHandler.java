@@ -2,7 +2,6 @@ import java.io.*;
 import java.net.Socket;
 
 class ClientHandler implements Runnable {
-    // Alterado de private para public ou protected para permitir acesso
     public Socket socket;
     private DataInputStream in;
     private DataOutputStream out;
